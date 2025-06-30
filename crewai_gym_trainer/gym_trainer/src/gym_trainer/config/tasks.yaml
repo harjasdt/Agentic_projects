@@ -1,0 +1,33 @@
+exercise_plan_task:
+  description: >
+    Generate a customized workout plan based on the user's goals, fitness level, and preferences.
+    Ensure the plan is realistic, balanced, and suitable for daily or weekly scheduling.
+  expected_output: >
+    A detailed workout plan with exercise names, durations/repetitions, rest intervals, and weekly schedule.
+  agent: exercise_planner
+
+diet_plan_task:
+  description: >
+    Create a personalized diet plan based on the user's dietary needs, health goals, and food preferences or restrictions.
+    Ensure it is balanced and sustainable for long-term use.
+  expected_output: >
+    A structured meal plan (breakfast, lunch, dinner, snacks) for a week with calorie estimates and nutritional breakdowns.
+  agent: diet_planner
+  context: [exercise_plan_task]
+
+summarisation_task:
+  description: >
+    Read the provided content and generate a concise and accurate summary that captures the main points and tone of the source.
+    Include points for both diet and workout plan,if not present in context tell it
+    Note: Generate final summay in html so it can be a perfect email body.
+  expected_output: >
+    A summary paragraph or a list of bullet points that convey the core ideas and facts from the original content.
+  agent: summariser
+  context: [diet_plan_task,exercise_plan_task]
+
+notification_task:
+  description: >
+    use tool to send an email notification only of the final summary
+  expected_output: >
+    A list of notifications with titles, descriptions, and suggested delivery times.
+  agent: notifier
