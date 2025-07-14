@@ -1,0 +1,9 @@
+langchain[google-genai]
+google_auth_oauthlib
+langgraph
+langsmith
+beautifulsoup4
+fitz
+PyMuPDF
+google-api-python-client
+requests
