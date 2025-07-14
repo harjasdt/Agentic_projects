@@ -32,6 +32,25 @@ A multi-agent fitness planner that uses **CrewAI** to coordinate agents for:
 - Email notifications with HTML summaries
 - Fully agent-driven logic using `crew` and `flows`
 
+## ✅ Project 2: Gmail Auto-Reply Agent (LangGraph)
+
+An intelligent, graph-driven email assistant using **LangGraph** that:
+- 📥 Reads unread emails  
+- 🧠 Decides if a reply is needed (LLM-based)  
+- ✍️ Generates and drafts replies  
+- 📬 Marks emails as read
+
+### 🔧 Tech Stack
+- **LangGraph** for graph logic  
+- `langchain` for tools & LLM orchestration  
+- **Google Gemini Flash** for fast LLM inference  
+- Gmail API (OAuth 2.0) for email operations
+
+### 📦 Features
+- Auto-reply for actionable emails  
+- Multi-step flow: fetch → analyze → reply → mark read  
+- Conditional branching via LangGraph  
+- Logging and error handling built-in
 
 ---
 
